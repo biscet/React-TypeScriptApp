@@ -4,3 +4,4 @@
 /// <reference path="../Static/Declare/classnames.d.ts"/>
 /// <reference path="../Static/Declare/ramda.d.ts"/>
 /// <reference path="../Static/Declare/image.d.ts"/>
+/// <reference path="../Static/Declare/flux.d.ts"/>
