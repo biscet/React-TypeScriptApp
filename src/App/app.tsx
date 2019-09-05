@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { hot } from "react-hot-loader"
-import { Switch, Route } from "react-router-dom"
+import { Router } from "@reach/router"
 
 import "./Static/Styles/app.scss"
 
@@ -10,24 +10,19 @@ import "./Entities/mixin-helper"
 
 import { AppRoutes } from "./Routes/appRoutes"
 
-const PathRoutes: any = (): JSX.Element[] =>
-  AppRoutes.map((route, i) => (
-    <Route
-      key={i}
-      path={route.path}
-      component={route.component}
-      exact={route.exact}
-    />
-  ))
+type AppProps = {
+  path: string
+}
+
+const PathRoutes: Function = (): JSX.Element[] =>
+  AppRoutes.map((route, i) => <route.component key={i} path={route.path} />)
 
 export default hot(module)(
-  class App extends Component {
+  class App extends Component<AppProps> {
     render() {
       return (
         <div className="wrapper">
-          <Switch>
-            <PathRoutes />
-          </Switch>
+          <PathRoutes />
         </div>
       )
     }
