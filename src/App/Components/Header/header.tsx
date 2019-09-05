@@ -1,9 +1,12 @@
-import React, { Component } from "react"
+import React from "react"
 
 import "./header.scss"
 
-export default class Header extends Component<any, {}> {
-  render() {
-    return <header>Do you speak english it!?</header>
-  }
+type HeaderProps = {
+  title: string
+  signs?: string
 }
+
+export const Header = ({ title, signs = "" }: HeaderProps): JSX.Element => (
+  <header>{title + signs}</header>
+)

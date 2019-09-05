@@ -1,6 +1,6 @@
 import dispatcher from "../Entities/Dispatcher"
 
-import { ReduceStore } from "flux"
+import ReduceStore from "flux"
 
 interface ActionTypes {
   type: string
