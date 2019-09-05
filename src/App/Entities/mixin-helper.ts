@@ -15,3 +15,7 @@ const mixinCreate: Function = (name: MixinKeys, func: Function) =>
 mixinCreate("trace", (article?: string) => {
   console.trace(article)
 })
+
+mixinCreate("table", (array: Array<string> | Object, sort?: Array<string>) => {
+  console.table(array, sort)
+})
